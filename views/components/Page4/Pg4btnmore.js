@@ -26,14 +26,14 @@ const styles = StyleSheet.create ({
 
    container: {
      flex:1,
-     justifyContent:'center',
+     justifyContent:'flex-end',
       alignItems: 'center',
 
        },
    button: {
      alignItems:'center',
      justifyContent:'center',
-     zIndex:1,
+
     overflow: 'hidden',
     width:220,
     height:50,

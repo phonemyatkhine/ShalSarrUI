@@ -10,14 +10,79 @@ import Pg2txtsavedamount from '../views/components/Page2/Pg2txtsavedamount'
 import Pg2energyleftindicator from '../views/components/Page2/Pg2energyleftindicator'
 import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedrestaurant'
 import Pg2btnpremiumuser from '../views/components/Page2/Pg2btnpremiumuser'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import  { useState, useEffect } from 'react';
+import { Animated } from 'react-native';
+
+
+
+//////////tab navigation
+
+
+const TabIcon = (props) => (
+  <MaterialCommunityIcons
+    name={'face'}
+    size={30}
+    color={props.focused ? '#d63031' : '#9e9e9e'}
+  />
+)
+
+
+
+
+
+/////////////
+
+
+
+
+
+
+
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 500,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
 
 
 
 export default class ProfileScreen extends Component {
+
+
+  static navigationOptions = {
+    tabBarIcon: TabIcon
+  };
+
+
+
+
+
   render(){
     return (
-
+<View style={{ flex: 1, }}>
+<FadeInView style={styles.container}>
       <SafeAreaView style={styles.container}>
       <View style={styles.box1}>
 
@@ -52,7 +117,8 @@ export default class ProfileScreen extends Component {
           </SafeAreaView>
 
 
-
+          </FadeInView>
+        </View>
 
 
     );
@@ -69,6 +135,7 @@ const styles = StyleSheet.create({
   {
 
     fontSize:34,
+    fontWeight:'bold',
 
   },
   box1:
@@ -82,7 +149,7 @@ const styles = StyleSheet.create({
   b1flex1:
   {
     marginLeft:19,
-    flex:1,
+    flex:2,
     justifyContent:'center',
 
 

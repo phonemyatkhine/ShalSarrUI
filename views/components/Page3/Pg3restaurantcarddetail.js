@@ -65,8 +65,12 @@ const styles = StyleSheet.create ({
    {
       fontWeight:'bold',
       fontSize:24,
+      color:'#212121',
    },
-
+   text:
+   {
+      color:'#212121',
+   },
    layer:
    {
 

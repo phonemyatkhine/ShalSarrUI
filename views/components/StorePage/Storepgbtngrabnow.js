@@ -6,11 +6,11 @@ import MaterialIcon, {colorPalette} from 'react-native-vector-icons/MaterialIcon
 import Font from 'react-native-vector-icons/MaterialIcons';
 
 
-function Pg5btnlogout() {
+function Storepgbtngrabnow() {
   return (
 
     <Ripple style = {styles.button}>
-    <Text style={styles.btntext}>Logout this account</Text>
+    <Text style={styles.btntext}>Grab Now</Text>
 
 
 
@@ -19,27 +19,23 @@ function Pg5btnlogout() {
   );
 
 }
-export default Pg5btnlogout;
+export default Storepgbtngrabnow;
 
 
 const styles = StyleSheet.create ({
 
    container: {
      flex:1,
-     justifyContent:'center',
-      alignItems: 'center',
-
-   },
+       },
    button: {
-    marginBottom:80,
+     marginBottom:10,
      alignItems:'center',
      justifyContent:'center',
-
     overflow: 'hidden',
-    width: 187,
+    width:220,
     height:50,
-    borderRadius:10,
     backgroundColor:'#f5f5f5',
+    borderRadius:10,
 
    },
    btntext:

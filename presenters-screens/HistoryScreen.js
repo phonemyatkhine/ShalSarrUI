@@ -14,6 +14,7 @@ import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
 import Pg7savedcard from '../views/components/Page7/Pg7savedcard'
 import Pg8historycard from '../views/components/Page8/Pg8historycard'
 
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 
@@ -31,12 +32,19 @@ export default class HistoryScreen extends Component {
       <SafeAreaView style={styles.container}>
       <View style={styles.box1}>
 
-              <View style={styles.b1flex1}>
+                <View style={styles.b1flex1}>
 
-              </View>
-              <View style={styles.b1flex2}>
-              <Text style={styles.text}>History</Text>
-              </View>
+                    <Icon style={styles.icon} name="ios-arrow-back" size={24} color="#212121"/>
+
+                </View>
+                <View style={styles.b1flex2}>
+
+                      <Text style={styles.text}>History</Text>
+
+                </View>
+                <View style={styles.b1flex3}>
+
+                </View>
 
       </View>
 
@@ -75,6 +83,7 @@ const styles = StyleSheet.create({
 
 
     fontSize:34,
+    fontWeight:'bold',
 
   },
 
@@ -103,28 +112,32 @@ const styles = StyleSheet.create({
 
   },
 
-    b1flex1:
-    {
+          b1flex1:
+          {
+            marginLeft:19,
+            flex:1,
+            justifyContent:'center',
 
-      flex:1,
+          },
+          b1flex2:
+          {
 
+            flex:7,
 
-
-
-    },
-    b1flex2:
-    {
-
-      flex:19,
-      alignItems:'flex-start',
-      justifyContent:'center',
-
+            alignItems:'flex-start',
+            justifyContent:'center',
 
 
+          },
+          b1flex3:
+          {
+            marginRight:19,
+            flex:1,
+            alignItems:'flex-end',
+            justifyContent:'center',
 
 
-    },
-
+          },
 
 
 

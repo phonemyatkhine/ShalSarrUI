@@ -24,7 +24,21 @@ import Pg7savedcard from '../views/components/Page7/Pg7savedcard'
 import Pg8historycard from '../views/components/Page8/Pg8historycard'
 import Pg4transactioncomplete from '../views/components/Page4/Pg4transactioncomplete'
 import Pg3promotionbar from '../views/components/Page3/Pg3promotionbar'
+import Pg3btncategory from '../views/components/Page3/Pg3btncategory'
+import Storepgshalpointpackage from '../views/components/StorePage/Storepgshalpointpackage'
+import Storepgpaymentmethod from '../views/components/StorePage/Storepgpaymentmethod'
+import Storepgconfirmnumber from '../views/components/StorePage/Storepgconfirmnumber'
+import Editpgeditprofile from '../views/components/EditprofilePage/Editpgeditprofile'
+import Editpgbtnupdate from '../views/components/EditprofilePage/Editpgbtnupdate'
+import Editpgemailbox from '../views/components/EditprofilePage/Editpgemailbox'
+import Editpgphbox from '../views/components/EditprofilePage/Editpgphbox'
+import Categorypgbtnrecent from '../views/components/CategoryPage/Categorypgbtnrecent'
+import Searchpgsearchingbox from '../views/components/SearchPage/Searchpgsearchingbox'
+import Searchpgfilter from '../views/components/SearchPage/Searchpgfilter'
+import Resultpgresultdata from '../views/components/ResultPage/Resultpgresultdata'
 
+import Resultpgsearchingbox from '../views/components/ResultPage/Resultpgsearchingbox'
+import Resultpgfilterchip from '../views/components/ResultPage/Resultpgfilterchip'
 
 
 
@@ -34,7 +48,7 @@ export default class LoginScreen extends Component {
 
       <View style={styles.container}>
 
-      <Pg1Backgroundimage/>
+      <Resultpgresultdata/>
 
 
       </View>

@@ -20,15 +20,79 @@ import Pg5btneditprofile from '../views/components/Page5/Pg5btneditprofile'
 import Pg5btnlogout from '../views/components/Page5/Pg5btnlogout'
 
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+import  { useState, useEffect } from 'react';
+import { Animated } from 'react-native';
+
+
+//////////tab navigation
+
+
+const TabIcon = (props) => (
+  <MaterialCommunityIcons
+    name={'view-headline'}
+    size={30}
+    color={props.focused ? '#d63031' : '#9e9e9e'}
+  />
+)
+
+
+
+
+
+/////////////
+
+
+
+
+
+
+
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 500,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
 
 
 
 
 
 export default class RestaurantsScreen extends Component {
+
+
+  static navigationOptions = {
+    tabBarIcon: TabIcon
+  };
+
+
+
+
+
   render(){
     return (
-
+  <View style={{ flex: 1, }}>
+    <FadeInView style={styles.container}>
       <View style={styles.container}>
 
 
@@ -43,7 +107,7 @@ export default class RestaurantsScreen extends Component {
                     </View>
                     <View style={styles.b1flex2}>
 
-                        <Text style={styles.text}>Menu</Text>
+                        <Text style={styles.text}>Settings</Text>
 
                     </View>
 
@@ -60,14 +124,15 @@ export default class RestaurantsScreen extends Component {
                       <Pg5btnlogout/>
 
               </View>
-              
 
-</SafeAreaView>
+
+            </SafeAreaView>
 
 
       </View>
 
-
+      </FadeInView>
+    </View>
 
 
 
@@ -84,13 +149,13 @@ const styles = StyleSheet.create({
   text:
   {
     fontSize:34,
+    fontWeight:'bold',
 
   },
   box1:
   {
     flexDirection:'row',
     height:67,
-    backgroundColor:'pink',
 
 
 
@@ -121,9 +186,7 @@ const styles = StyleSheet.create({
   {
 
 
-    flex:1,
-    backgroundColor:'red',
-
+    height:375,
 
 
 
@@ -133,8 +196,8 @@ const styles = StyleSheet.create({
 
     alignItems:'center',
     justifyContent:'flex-end',
+
     flex:1,
-    backgroundColor:'blue',
 
 
   },

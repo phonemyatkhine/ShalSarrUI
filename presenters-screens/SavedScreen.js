@@ -14,6 +14,7 @@ import Pg3searchbox from '../views/components/Page3/Pg3searchbox'
 import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
 import Pg7savedcard from '../views/components/Page7/Pg7savedcard'
 
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 
@@ -30,13 +31,20 @@ export default class SavedScreen extends Component {
 
       <SafeAreaView style={styles.container}>
       <View style={styles.box1}>
+      <View style={styles.b1flex1}>
 
-              <View style={styles.b1flex1}>
+          <Icon style={styles.icon} name="ios-arrow-back" size={24} color="#212121"/>
 
-              </View>
-              <View style={styles.b1flex2}>
-              <Text style={styles.text}>Saved</Text>
-              </View>
+      </View>
+      <View style={styles.b1flex2}>
+
+            <Text style={styles.text}>Saved</Text>
+
+      </View>
+      <View style={styles.b1flex3}>
+
+      </View>
+
 
       </View>
 
@@ -76,39 +84,45 @@ const styles = StyleSheet.create({
 
 
     fontSize:34,
+    fontWeight:'bold',
 
   },
   box1:
   {
     flexDirection:'row',
     height:67,
-    
+
 
 
 
   },
 
-    b1flex1:
-    {
+  b1flex1:
+  {
+    marginLeft:19,
+    flex:1,
+    justifyContent:'center',
 
-      flex:1,
+  },
+  b1flex2:
+  {
 
+    flex:7,
 
-
-
-    },
-    b1flex2:
-    {
-
-      flex:19,
-      alignItems:'flex-start',
-      justifyContent:'center',
-
+    alignItems:'flex-start',
+    justifyContent:'center',
 
 
+  },
+  b1flex3:
+  {
+    marginRight:19,
+    flex:1,
+    alignItems:'flex-end',
+    justifyContent:'center',
 
 
-    },
+  },
   box2:
   {
 

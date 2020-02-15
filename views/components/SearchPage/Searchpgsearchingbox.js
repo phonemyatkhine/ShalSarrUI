@@ -6,17 +6,10 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconfont from 'react-native-vector-icons/MaterialIcons';
 import {KeyboardAvoidingView} from 'react-native';
 
-function Pg3searchbox() {
+function Searchpgsearchingbox() {
   return (
 
     <View style= {styles.container}>
-
-    <View style={styles.section1}>
-
-    </View>
-    <View style={styles.section2}>
-
-
                               <View style={styles.layer}>
                                 <View style={styles.box1}>
                                   <Iconfont style={styles.icon} name="search" size={24} color="#757575"/>
@@ -34,60 +27,38 @@ function Pg3searchbox() {
                                              maxLength={30}
                                            />
 
-
+                                </View>
+                                <View style={styles.box3}>
+                                  <Iconfont style={styles.icon} name="close" size={24} color="#212121"/>
                                 </View>
 
                               </View>
-
-    </View>
-    <View style={styles.section3}>
-    </View>
-
-
-
-
-
-
 
     </View>
 
   );
 
 }
-export default Pg3searchbox ;
+export default Searchpgsearchingbox ;
 
 
 const styles = StyleSheet.create ({
 
    container: {
-     flexDirection:'row',
-
+     flex:1,
     justifyContent:'center',
     alignItems: 'center',
    },
    layer:
    {
 
-     borderRadius:15,
      flexDirection:'row',
-     width:'100%',
+     width:'95%',
      height:55,
-     backgroundColor:'#eee',
+     borderBottomColor: '#e0e0e0',
+    borderBottomWidth: 1,
    },
-   section1:
-   {
-      flex:1,
-   },
-   section2:
-   {
-      flex:19,
 
-   },
-   section3:
-   {
-      flex:1,
-
-   },
   text:
   {
 
@@ -96,17 +67,22 @@ const styles = StyleSheet.create ({
 
   },
   box1:{
-    alignItems:'flex-end',
+    alignItems:'center',
     justifyContent:'center',
     flex:1,
 
-
   },
   box2:{
-    marginLeft:10,
-    marginRight:10,
-    flex:7,
+
+    flex:6,
     justifyContent:'center',
+
+
+  },
+  box3:{
+    alignItems:'center',
+    justifyContent:'center',
+    flex:1,
 
 
   },

@@ -24,6 +24,7 @@ import Pg5btnlogout from '../views/components/Page5/Pg5btnlogout'
 import Pg4btnmore from '../views/components/Page4/Pg4btnmore'
 import Pg4btnfavouriteandsave from '../views/components/Page4/Pg4btnfavouriteandsave'
 import Pg4imagebanner from '../views/components/Page4/Pg4imagebanner'
+import Icon from 'react-native-vector-icons/Ionicons';
 import Pg4QRscanner from '../views/components/Page4/Pg4QRscanner'
 
 
@@ -49,10 +50,17 @@ export default class DetailrestaurantScreen extends Component {
                   <View style={styles.box1}>
 
                           <View style={styles.b1flex1}>
-                          <Text style={styles.text}>365 Cafe</Text>
+
+                              <Icon style={styles.icon} name="ios-arrow-back" size={24} color="#212121"/>
+
                           </View>
                           <View style={styles.b1flex2}>
-                            <Pg4btnfavouriteandsave/>
+
+                                <Text style={styles.text}>365 Cafe</Text>
+
+                          </View>
+                          <View style={styles.b1flex3}>
+                                  <Pg4btnfavouriteandsave/>
                           </View>
 
 
@@ -93,6 +101,7 @@ const styles = StyleSheet.create({
   text:
   {
     fontSize:34,
+    fontWeight:'bold',
 
   },
   box1:
@@ -102,48 +111,56 @@ const styles = StyleSheet.create({
 
 
 
-
   },
-  b1flex1:
-  {
-    marginLeft:19,
-    flex:1,
-    justifyContent:'center',
+        b1flex1:
+        {
+          marginLeft:19,
+          flex:1,
+          justifyContent:'center',
+
+        },
+        b1flex2:
+        {
+
+          flex:7,
+
+          alignItems:'flex-start',
+          justifyContent:'center',
 
 
-  },
-  b1flex2:
-  {
-    marginRight:19,
-    flex:1,
+        },
+        b1flex3:
+        {
+          marginRight:19,
+          flex:2,
 
-    alignItems:'flex-end',
-    justifyContent:'center',
+          alignItems:'flex-end',
+          justifyContent:'center',
 
 
-  },
+        },
   box2:
   {
 
 
-    height:150,
-
-
+    flex:1,
 
 
   },
   box3:
   {
-
+    flex:1,
     alignItems:'center',
     justifyContent:'center',
-    height:392,
+
 
   },
   box4:
   {
+    flex:1,
     alignItems:'center',
-    justifyContent:'center',
+    justifyContent:'flex-end',
+
 
   },
   subheading:

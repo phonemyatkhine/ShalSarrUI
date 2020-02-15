@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View,ScrollView,SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View,ScrollView,SafeAreaView,Alert } from 'react-native';
 
 import Pg1btnLoginwithfacebook from '../views/components/Page1/Pg1btnLoginwithfacebook'
 import Pg1txtShalsar from '../views/components/Page1/Pg1txtShalsar'
@@ -13,30 +13,87 @@ import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedre
 import Pg3searchbox from '../views/components/Page3/Pg3searchbox'
 import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
 import Pg3promotionbar from '../views/components/Page3/Pg3promotionbar'
+import Pg3btncategory from '../views/components/Page3/Pg3btncategory'
+import {KeyboardAvoidingView} from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+import  { useState, useEffect } from 'react';
+import { Animated } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
+
+//////////tab navigation
+
+
+const TabIcon = (props) => (
+  <MaterialCommunityIcons
+    name={'rice'}
+    size={30}
+    color={props.focused ? '#d63031' : '#9e9e9e'}
+  />
+)
 
 
 
 
+
+/////////////
+
+
+
+//////////////fade animation
+const FadeInView = (props) => {
+  const [fadeAnim] = useState(new Animated.Value(0))
+
+  React.useEffect(() => {
+    Animated.timing(
+      fadeAnim,
+      {
+        toValue: 1,
+        duration: 500,
+      }
+    ).start();
+  }, [])
+
+  return (
+    <Animated.View                 // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAnim,         // Bind opacity to animated value
+      }}
+    >
+      {props.children}
+    </Animated.View>
+  );
+}
+////////////
 
 
 
 
 export default class RestaurantsScreen extends Component {
+
+  static navigationOptions = {
+  tabBarIcon: TabIcon
+};
+
+
+
   render(){
     return (
-
-      <View style={styles.container}>
+  <View style={{ flex: 1, }}>
+    <FadeInView style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
 
 
       <SafeAreaView style={styles.container}>
       <View style={styles.box1}>
 
-              <View style={styles.b1flex1}>
-
-              </View>
-              <View style={styles.b1flex2}>
-              <Text style={styles.text}>Restaurants</Text>
-              </View>
+      <View style={styles.b1flex1}>
+      <Text style={styles.text}>Restaurants</Text>
+      </View>
+      <View style={styles.b1flex2}>
+        <Pg3btncategory/>
+      </View>
 
       </View>
 
@@ -52,10 +109,11 @@ export default class RestaurantsScreen extends Component {
             </ScrollView>
           </SafeAreaView>
 
-      </View>
+      </KeyboardAvoidingView>
 
 
-
+      </FadeInView>
+    </View>
 
 
 
@@ -74,6 +132,7 @@ const styles = StyleSheet.create({
 
 
     fontSize:34,
+    fontWeight:'bold',
 
   },
   box1:
@@ -82,6 +141,23 @@ const styles = StyleSheet.create({
     height:67,
 
 
+
+  },
+  b1flex1:
+  {
+    marginLeft:19,
+    flex:2,
+    justifyContent:'center',
+
+
+
+  },
+  b1flex2:
+  {
+    marginRight:19,
+    flex:1,
+    alignItems:'flex-end',
+    justifyContent:'center',
 
 
   },
@@ -124,28 +200,6 @@ const styles = StyleSheet.create({
   },
 
 
-
-  b1flex1:
-  {
-
-    flex:1,
-
-
-
-
-  },
-  b1flex2:
-  {
-
-    flex:19,
-    alignItems:'flex-start',
-    justifyContent:'center',
-
-
-
-
-
-  },
 
 
 
