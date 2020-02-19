@@ -24,29 +24,25 @@ export default Pg5btnlogout;
 
 const styles = StyleSheet.create ({
 
-   container: {
-     flex:1,
-     justifyContent:'center',
-      alignItems: 'center',
+  container: {
+    flex:1,
+      },
+  button: {
+    marginBottom:10,
+    alignItems:'center',
+    justifyContent:'center',
+   overflow: 'hidden',
+   width:220,
+   height:50,
+   backgroundColor:'#f5f5f5',
+   borderRadius:10,
 
-   },
-   button: {
-    marginBottom:80,
-     alignItems:'center',
-     justifyContent:'center',
+  },
+  btntext:
+  {
+    fontWeight:'bold',
+    color:'#146CA3',
 
-    overflow: 'hidden',
-    width: 187,
-    height:50,
-    borderRadius:10,
-    backgroundColor:'#f5f5f5',
-
-   },
-   btntext:
-   {
-     fontWeight:'bold',
-     color:'#146CA3',
-
-   },
+  },
 
 })

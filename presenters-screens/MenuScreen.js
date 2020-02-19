@@ -220,11 +220,12 @@ const styles = StyleSheet.create({
   },
   box3:
   {
-
-    alignItems:'center',
+    width:'100%',
+    bottom:0,
+    position:'absolute',
     justifyContent:'flex-end',
-
-    flex:1,
+    alignItems:'center',
+    height:71,
 
 
   },

@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View, SafeAreaView,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView,TouchableOpacity,ScrollView,KeyboardAvoidingView } from 'react-native';
 
 
 import Editpgeditprofile from '../views/components/EditprofilePage/Editpgeditprofile'
@@ -24,7 +24,7 @@ export default function EditprofileScreen ({navigation})
       navigation.goBack();
     }
     return (
-
+      <KeyboardAvoidingView style={styles.container}  behavior="height" enabled>
       <View style={styles.container}>
 
 
@@ -49,7 +49,7 @@ export default function EditprofileScreen ({navigation})
       </View>
 
 
-
+      <ScrollView style={styles.scrollView}  alwaysBounceVertical={false} bounces={false} >
               <View style={styles.box2}>
                   <Editpgeditprofile/>
               </View>
@@ -65,6 +65,8 @@ export default function EditprofileScreen ({navigation})
                       </View>
 
               </View>
+
+                              </ScrollView>        
               <View style={styles.box4}>
 
                 <Editpgbtnupdate/>
@@ -77,6 +79,7 @@ export default function EditprofileScreen ({navigation})
           </SafeAreaView>
 
       </View>
+      </KeyboardAvoidingView>
 
 
 
@@ -156,12 +159,14 @@ const styles = StyleSheet.create({
 
   box3:
   {
-    flex:1,
+    height:175,
+
+
   },
           b3flex1:
           {
               justifyContent:'flex-start',
-              flex:2,
+              flex:3,
 
           },
           b3flex2:
@@ -172,9 +177,10 @@ const styles = StyleSheet.create({
           },
   box4:
   {
-    flex:1,
-    alignItems:'center',
-    justifyContent:'flex-end',
+
+        justifyContent:'flex-end',
+        alignItems:'center',
+        height:71,
 
 
   },

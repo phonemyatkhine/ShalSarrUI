@@ -20,13 +20,14 @@ function Editpgemailbox() {
                       <View style= {styles.mailbox}>
                       <TextInput
                          style={styles.input}
+
                          placeholder="Enter your new email..."
                          autoCapitalize="none"
                          autoCorrect={false}
                          keyboardType="default"
                          returnKeyType="default"
                         clearButtonMode="while-editing"
-                         blurOnSubmit={true}
+
 
                        />
                       </View>
@@ -47,17 +48,11 @@ const styles = StyleSheet.create ({
 
     alignItems: 'center',
    },
-   text:
-   {
-      marginLeft:20,
-     fontSize:14,
-     color:'#9e9e9e',
 
-   },
    subheading:
    {
      marginLeft:10,
-      fontSize:12,
+    fontSize:15,
    },
    layer:
    {

@@ -38,6 +38,8 @@
     "react-native-custom-qr-codes-expo": "^2.2.0",
     "react-native-fontawesome": "^7.0.0",
     "react-native-gesture-handler": "~1.5.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.1",
+    "react-native-keyboard-aware-scrollview": "^2.1.0",
     "react-native-lightweight-responsive": "0.0.6",
     "react-native-material-buttons": "^0.6.0",
     "react-native-material-ripple": "^0.9.1",

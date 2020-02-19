@@ -40,13 +40,14 @@ export default Editpgbtnupdate ;
 const styles = StyleSheet.create ({
 
    container: {
+  
      flex:1,
-     justifyContent:'flex-end',
-    alignItems: 'center',
+     alignItems:'center',
+     justifyContent:'center',
+
    },
    layer:
    {
-
       justifyContent:'space-between',
       alignItems:'center',
       flexDirection:'row',

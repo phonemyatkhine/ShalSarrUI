@@ -97,13 +97,14 @@ export default class StoreScreen extends Component {
               <Storepgconfirmnumber/>
 
               </View>
+      </ScrollView>
               <View style={styles.box5}>
 
                 <Storepgbtngrabnow/>
 
               </View>
 
-                </ScrollView>
+
           </SafeAreaView>
 
       </KeyboardAvoidingView>
@@ -196,6 +197,7 @@ const styles = StyleSheet.create({
   },
   box5:
   {
+
     justifyContent:'flex-end',
     alignItems:'center',
     height:71,
