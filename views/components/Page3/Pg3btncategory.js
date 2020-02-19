@@ -7,19 +7,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-function Pg3btncategory() {
-
-  const showAlert = () =>{
-        Alert.alert(
-           'You need to...'
-        )
-     }
-
+function Pg3btncategory(props) {
 
   return (
 
-
-    <Ripple style = {styles.button} onPress={() => showAlert()} >
+    <Ripple style = {styles.button} onPress={props.buttonHandle} >
 
     <Icon style={styles.icon} name="view-grid" size={24} color="#212121"/>
 

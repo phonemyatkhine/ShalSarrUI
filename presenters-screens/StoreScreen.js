@@ -19,13 +19,6 @@ import { Animated } from 'react-native';
 //////////tab navigation
 
 
-const TabIcon = (props) => (
-  <MaterialCommunityIcons
-    name={'credit-card-plus'}
-    size={30}
-    color={props.focused ? '#d63031' : '#9e9e9e'}
-  />
-)
 
 
 
@@ -66,14 +59,11 @@ const FadeInView = (props) => {
 
 export default class StoreScreen extends Component {
 
-  static navigationOptions = {
-    tabBarIcon: TabIcon
-  };
 
 
   render(){
     return (
-      <View style={{ flex: 1, }}>
+<View style={{ flex: 1, }}>
   <FadeInView style={styles.container}>
       <KeyboardAvoidingView style={styles.container}  behavior="height" enabled >
 

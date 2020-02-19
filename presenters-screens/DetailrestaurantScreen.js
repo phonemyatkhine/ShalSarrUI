@@ -17,9 +17,8 @@ import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedre
 import Pg3searchbox from '../views/components/Page3/Pg3searchbox'
 import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
 import Pg3restaurantcarddetail from '../views/components/Page3/Pg3restaurantcarddetail'
-import Pg5btnsaved from '../views/components/Page5/Pg5btnsaved'
 import Pg5btnaboutus from '../views/components/Page5/Pg5btnaboutus'
-import Pg5btnhistory from '../views/components/Page5/Pg5btnhistory'
+
 import Pg5btnlogout from '../views/components/Page5/Pg5btnlogout'
 import Pg4btnmore from '../views/components/Page4/Pg4btnmore'
 import Pg4btnfavouriteandsave from '../views/components/Page4/Pg4btnfavouriteandsave'

@@ -11,22 +11,26 @@ import Categorypgbtnrecent from '../views/components/CategoryPage/Categorypgbtnr
 import Categorypgbtnfavorite from '../views/components/CategoryPage/Categorypgbtnfavorite'
 import Categorypgbtnlocation from '../views/components/CategoryPage/Categorypgbtnlocation'
 import Categorypgbtnseeall from '../views/components/CategoryPage/Categorypgbtnseeall'
+import Ripple from 'react-native-material-ripple';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
-export default class CatergoryScreen extends Component {
+CategoryScreen.navigationOptions={
 
-  static navigationOptions = {
-  title: "Profile",
-  headerStyle: {
-  backgroundColor: "#73C6B6"
+      headerShown: false,
+      cardStyle:{
+        backgroundColor:'#fff',
+      }
+}
+
+
+export default function CategoryScreen ({navigation})
+{
+  const pressHandler= () => {
+    navigation.goBack();
   }
-  };
 
-
-
-
-  render(){
-    return (
+      return (
 
       <View style={styles.container}>
 
@@ -38,7 +42,14 @@ export default class CatergoryScreen extends Component {
       <Text style={styles.text}>Categories</Text>
       </View>
       <View style={styles.b1flex2}>
-        <Categorypgbtnexit/>
+
+              <Ripple style = {styles.button} onPress={pressHandler} >
+
+              <Icon style={styles.icon} name="remove" size={24} color="#d63031"/>
+
+              </Ripple>
+
+
       </View>
 
       </View>
@@ -63,7 +74,6 @@ export default class CatergoryScreen extends Component {
                                   <View style={styles.f2div2}>
                                     <Categorypgbtnseeall/>
                                   </View>
-
                         </View>
 
                   </View>
@@ -84,7 +94,7 @@ export default class CatergoryScreen extends Component {
 
 
     );
-  }
+
 }
 
 const styles = StyleSheet.create({
@@ -144,7 +154,7 @@ const styles = StyleSheet.create({
           {
 
             width:'90%',
-            height:'77%',
+            height:'85%',
 
           },
           flex1:
@@ -166,6 +176,7 @@ const styles = StyleSheet.create({
                         justifyContent:'center',
                         flex:1,
                     },
+                    
           flex2:
           {
             justifyContent:'space-between',
@@ -190,6 +201,24 @@ const styles = StyleSheet.create({
   box4:
   {
     flex:1,
+
+
+  },
+  button: {
+    overflow:'hidden',
+    alignItems:'center',
+    justifyContent:'center',
+  borderRadius:50,
+   width: 45,
+   height:45,
+   backgroundColor: '#f5f5f5',
+
+  },
+  icon:
+  {
+    alignItems:'center',
+    justifyContent:'center',
+
 
 
   },

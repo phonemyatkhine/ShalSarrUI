@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View,ScrollView,SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View,ScrollView,SafeAreaView,TouchableOpacity} from 'react-native';
 
 import Pg1btnLoginwithfacebook from '../views/components/Page1/Pg1btnLoginwithfacebook'
 import Pg1txtShalsar from '../views/components/Page1/Pg1txtShalsar'
@@ -15,15 +15,24 @@ import Pg7savedcard from '../views/components/Page7/Pg7savedcard'
 import Pg8historycard from '../views/components/Page8/Pg8historycard'
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import Ripple from 'react-native-material-ripple';
+
+
+HistoryScreen.navigationOptions={
+
+  headerShown: false,
+  cardStyle:{
+    backgroundColor:'#fff',
+  }
+}
 
 
 
-
-
-
-
-export default class HistoryScreen extends Component {
-  render(){
+export default function HistoryScreen ({navigation})
+{
+    const pressHandler= () => {
+      navigation.goBack();
+    }
     return (
 
       <View style={styles.container}>
@@ -33,9 +42,11 @@ export default class HistoryScreen extends Component {
       <View style={styles.box1}>
 
                 <View style={styles.b1flex1}>
+                <TouchableOpacity style={styles.btncontainer} onPress={pressHandler}>
 
                     <Icon style={styles.icon} name="ios-arrow-back" size={24} color="#212121"/>
 
+                </TouchableOpacity>
                 </View>
                 <View style={styles.b1flex2}>
 
@@ -70,7 +81,7 @@ export default class HistoryScreen extends Component {
 
 
     );
-  }
+
 }
 
 const styles = StyleSheet.create({
@@ -114,7 +125,7 @@ const styles = StyleSheet.create({
 
           b1flex1:
           {
-            marginLeft:19,
+
             flex:1,
             justifyContent:'center',
 
@@ -122,7 +133,7 @@ const styles = StyleSheet.create({
           b1flex2:
           {
 
-            flex:7,
+            flex:6,
 
             alignItems:'flex-start',
             justifyContent:'center',
@@ -139,6 +150,16 @@ const styles = StyleSheet.create({
 
           },
 
+          btncontainer:{
+
+            alignItems:'center',
+            justifyContent:'center',
+            width:50,
+            height:50,
+            borderRadius:50,
+            overflow:'hidden',
+
+          },
 
 
 

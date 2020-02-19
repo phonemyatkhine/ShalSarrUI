@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView,TouchableOpacity } from 'react-native';
 
 
 import Editpgeditprofile from '../views/components/EditprofilePage/Editpgeditprofile'
@@ -7,10 +7,22 @@ import Editpgemailbox from '../views/components/EditprofilePage/Editpgemailbox'
 import Editpgphbox from '../views/components/EditprofilePage/Editpgphbox'
 import Editpgbtnupdate from '../views/components/EditprofilePage/Editpgbtnupdate'
 import Icon from 'react-native-vector-icons/Ionicons';
+import Ripple from 'react-native-material-ripple';
 
 
-export default class EditprofileScreen extends Component {
-  render(){
+EditprofileScreen.navigationOptions={
+
+  headerShown: false,
+  cardStyle:{
+    backgroundColor:'#fff',
+  }
+}
+
+export default function EditprofileScreen ({navigation})
+{
+    const pressHandler= () => {
+      navigation.goBack();
+    }
     return (
 
       <View style={styles.container}>
@@ -20,8 +32,9 @@ export default class EditprofileScreen extends Component {
       <View style={styles.box1}>
 
               <View style={styles.b1flex1}>
-
+              <TouchableOpacity style={styles.btncontainer} onPress={pressHandler}>
                   <Icon style={styles.icon} name="ios-arrow-back" size={24} color="#212121"/>
+              </TouchableOpacity>
 
               </View>
               <View style={styles.b1flex2}>
@@ -68,7 +81,7 @@ export default class EditprofileScreen extends Component {
 
 
     );
-  }
+
 }
 
 const styles = StyleSheet.create({
@@ -90,6 +103,16 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
 
   },
+  btncontainer:{
+
+    alignItems:'center',
+    justifyContent:'center',
+    width:50,
+    height:50,
+    borderRadius:50,
+    overflow:'hidden',
+
+  },
   box1:
   {
     flexDirection:'row',
@@ -97,11 +120,10 @@ const styles = StyleSheet.create({
 
 
 
-
   },
           b1flex1:
           {
-            marginLeft:19,
+
             flex:1,
             justifyContent:'center',
 
@@ -109,7 +131,7 @@ const styles = StyleSheet.create({
           b1flex2:
           {
 
-            flex:7,
+            flex:6,
 
             alignItems:'flex-start',
             justifyContent:'center',
@@ -122,6 +144,7 @@ const styles = StyleSheet.create({
             flex:1,
             alignItems:'flex-end',
             justifyContent:'center',
+
 
 
   },
@@ -155,6 +178,7 @@ const styles = StyleSheet.create({
 
 
   },
+
 
 
 });

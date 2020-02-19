@@ -16,31 +16,6 @@ import  { useState, useEffect } from 'react';
 import { Animated } from 'react-native';
 
 
-
-//////////tab navigation
-
-
-const TabIcon = (props) => (
-  <MaterialCommunityIcons
-    name={'face'}
-    size={30}
-    color={props.focused ? '#d63031' : '#9e9e9e'}
-  />
-)
-
-
-
-
-
-/////////////
-
-
-
-
-
-
-
-
 const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0))
 
@@ -71,15 +46,7 @@ const FadeInView = (props) => {
 export default class ProfileScreen extends Component {
 
 
-  static navigationOptions = {
-    tabBarIcon: TabIcon
-  };
-
-
-
-
-
-  render(){
+render(){
     return (
 <View style={{ flex: 1, }}>
 <FadeInView style={styles.container}>

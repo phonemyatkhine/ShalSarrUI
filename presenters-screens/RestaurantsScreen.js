@@ -9,6 +9,8 @@ import Pg2txtprofilename from '../views/components/Page2/Pg2txtprofilename'
 import Pg2txtsavedamount from '../views/components/Page2/Pg2txtsavedamount'
 import Pg2energyleftindicator from '../views/components/Page2/Pg2energyleftindicator'
 import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedrestaurant'
+import Ripple from 'react-native-material-ripple';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Pg3searchbox from '../views/components/Page3/Pg3searchbox'
 import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
@@ -21,24 +23,26 @@ import  { useState, useEffect } from 'react';
 import { Animated } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 
+
 //////////tab navigation
 
 
-const TabIcon = (props) => (
-  <MaterialCommunityIcons
-    name={'rice'}
-    size={30}
-    color={props.focused ? '#d63031' : '#9e9e9e'}
-  />
-)
+RestaurantsScreen.navigationOptions={
+
+  headerShown: false,
+  cardStyle:{
+    backgroundColor:'#fff',
+  }
+}
+
+
+
 
 
 
 
 
 /////////////
-
-
 
 //////////////fade animation
 const FadeInView = (props) => {
@@ -67,19 +71,12 @@ const FadeInView = (props) => {
 }
 ////////////
 
-
-
-
-export default class RestaurantsScreen extends Component {
-
-  static navigationOptions = {
-  tabBarIcon: TabIcon
-};
-
-
-
-  render(){
-    return (
+export default function RestaurantsScreen ({navigation})
+{
+    const pressHandler= () => {
+      navigation.navigate('screen2');
+    }
+  return (
   <View style={{ flex: 1, }}>
     <FadeInView style={styles.container}>
       <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -92,7 +89,11 @@ export default class RestaurantsScreen extends Component {
       <Text style={styles.text}>Restaurants</Text>
       </View>
       <View style={styles.b1flex2}>
-        <Pg3btncategory/>
+            <Ripple style = {styles.button}  onPress={pressHandler}>
+
+            <Icon style={styles.icon} name="view-grid" size={24} color="#212121"/>
+
+            </Ripple>
       </View>
 
       </View>
@@ -118,7 +119,7 @@ export default class RestaurantsScreen extends Component {
 
 
     );
-  }
+
 }
 
 const styles = StyleSheet.create({
@@ -198,7 +199,24 @@ const styles = StyleSheet.create({
 
 
   },
+  button: {
+    overflow:'hidden',
+    alignItems:'center',
+    justifyContent:'center',
+  borderRadius:50,
+   width: 45,
+   height:45,
+   backgroundColor: '#f5f5f5',
 
+  },
+  icon:
+  {
+
+    alignItems:'center',
+    justifyContent:'center',
+    color:'#146CA3',
+
+  },
 
 
 
