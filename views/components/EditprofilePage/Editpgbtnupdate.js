@@ -40,7 +40,7 @@ export default Editpgbtnupdate ;
 const styles = StyleSheet.create ({
 
    container: {
-  
+
      flex:1,
      alignItems:'center',
      justifyContent:'center',
@@ -48,6 +48,7 @@ const styles = StyleSheet.create ({
    },
    layer:
    {
+      marginBottom:10,
       justifyContent:'space-between',
       alignItems:'center',
       flexDirection:'row',

@@ -3,6 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 import RestaurantsScreen from '../presenters-screens/RestaurantsScreen';
 import CategoryScreen from '../presenters-screens/CategoryScreen';
+import SearchScreen from '../presenters-screens/SearchScreen';
 
 
 
@@ -17,6 +18,11 @@ const screens = {
   },
   screen2:{
     screen:CategoryScreen
+  },
+  SearchScreen:
+  {
+    screen:SearchScreen
+
   },
 
 

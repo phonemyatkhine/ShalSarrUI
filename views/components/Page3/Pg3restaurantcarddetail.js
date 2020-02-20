@@ -47,9 +47,6 @@ function Pg3restaurantcarddetail() {
                       </View>
                 </View>
 
-                <View style={styles.box4}>
-                    <Pg3promotionbar/>
-                </View>
         </View>
 
 
@@ -69,14 +66,15 @@ const styles = StyleSheet.create ({
    },
    text:
    {
+      fontSize:14,
       color:'#212121',
    },
    layer:
    {
 
      flexDirection:'column',
-     width:277,
-     height:210,
+     width:"100%",
+     height:165,
 
 
 
@@ -156,19 +154,7 @@ const styles = StyleSheet.create ({
        {
          flex:1,
 
-
-
        },
- box4:
- {
-   justifyContent:'flex-start',
-
-       flexDirection:'column',
-    flex:2,
-
-
-
- },
 
 
 

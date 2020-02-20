@@ -24,7 +24,7 @@ function Editpgphbox() {
                          autoCapitalize="none"
                          autoCorrect={false}
                          keyboardType="number-pad"
-                         returnKeyType="done"
+
                         clearButtonMode="while-editing"
                          blurOnSubmit={true}
 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create ({
    subheading:
    {
      marginLeft:10,
-      fontSize:15,
+      fontSize:14,
 
    },
    layer:

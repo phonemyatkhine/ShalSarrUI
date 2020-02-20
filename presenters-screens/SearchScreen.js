@@ -18,7 +18,13 @@ import  { useState, useEffect } from 'react';
 import { Animated } from 'react-native';
 
 /////////////
+SearchScreen.navigationOptions={
 
+  headerShown: false,
+  cardStyle:{
+    backgroundColor:'#fff',
+  }
+}
 
 
 
@@ -48,11 +54,8 @@ const FadeInView = (props) => {
 }
 
 
-export default class SearchScreen extends Component {
-
-
-
-  render(){
+export default function SearchScreen ({navigation})
+{
     return (
       <View style={{ flex: 1, }}>
   <FadeInView style={styles.container}>
@@ -88,7 +91,7 @@ export default class SearchScreen extends Component {
 
 
     );
-  }
+
 }
 
 const styles = StyleSheet.create({

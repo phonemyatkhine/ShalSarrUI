@@ -153,8 +153,8 @@ const styles = StyleSheet.create({
           layer:
           {
 
-            width:'90%',
-            height:'85%',
+            width:337,
+            height:257,
 
           },
           flex1:
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
                         justifyContent:'center',
                         flex:1,
                     },
-                    
+
           flex2:
           {
             justifyContent:'space-between',

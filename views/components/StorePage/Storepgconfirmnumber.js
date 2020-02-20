@@ -22,7 +22,6 @@ function Storepgconfirmnumber() {
            autoCapitalize="none"
            autoCorrect={false}
            keyboardType="number-pad"
-           returnKeyType="done"
            clearButtonMode="while-editing"
            blurOnSubmit={true}
 

@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View, SafeAreaView,TouchableOpacity,ScrollView,KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView,TouchableOpacity,ScrollView } from 'react-native';
 
 
 import Editpgeditprofile from '../views/components/EditprofilePage/Editpgeditprofile'
@@ -24,7 +24,7 @@ export default function EditprofileScreen ({navigation})
       navigation.goBack();
     }
     return (
-      <KeyboardAvoidingView style={styles.container}  behavior="height" enabled>
+
       <View style={styles.container}>
 
 
@@ -65,8 +65,7 @@ export default function EditprofileScreen ({navigation})
                       </View>
 
               </View>
-
-                              </ScrollView>        
+      </ScrollView>
               <View style={styles.box4}>
 
                 <Editpgbtnupdate/>
@@ -79,7 +78,6 @@ export default function EditprofileScreen ({navigation})
           </SafeAreaView>
 
       </View>
-      </KeyboardAvoidingView>
 
 
 
@@ -159,9 +157,7 @@ const styles = StyleSheet.create({
 
   box3:
   {
-    height:175,
-
-
+    height:166,
   },
           b3flex1:
           {
@@ -177,10 +173,12 @@ const styles = StyleSheet.create({
           },
   box4:
   {
-
-        justifyContent:'flex-end',
-        alignItems:'center',
-        height:71,
+    width:'100%',
+    bottom:0,
+    position:'absolute',
+    flex:1,
+    alignItems:'center',
+    justifyContent:'flex-end',
 
 
   },

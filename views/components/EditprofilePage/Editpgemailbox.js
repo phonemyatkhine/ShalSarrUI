@@ -52,7 +52,7 @@ const styles = StyleSheet.create ({
    subheading:
    {
      marginLeft:10,
-    fontSize:15,
+    fontSize:14,
    },
    layer:
    {

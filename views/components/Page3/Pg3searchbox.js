@@ -6,7 +6,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconfont from 'react-native-vector-icons/MaterialIcons';
 import {KeyboardAvoidingView} from 'react-native';
 
-function Pg3searchbox() {
+export default function RestaurantsScreen ({navigation})
+{
+    const pressHandler= () => {
+      navigation.navigate('SearchScreen');
+    }
   return (
 
     <View style= {styles.container}>
@@ -17,27 +21,17 @@ function Pg3searchbox() {
     <View style={styles.section2}>
 
 
-                              <View style={styles.layer}>
+                              <Ripple style={styles.layer} >
                                 <View style={styles.box1}>
                                   <Iconfont style={styles.icon} name="search" size={24} color="#757575"/>
                                 </View>
                                 <View style={styles.box2}>
-                                          <TextInput
-                                             style={styles.input}
-                                             placeholder="Search restaurants..."
-                                             autoCapitalize="none"
-                                             autoCorrect={false}
-                                             keyboardType="default"
-                                             returnKeyType="default"
-                                            clearButtonMode="while-editing"
-                                             blurOnSubmit={true}
-                                             maxLength={30}
-                                           />
 
+                                  <Text style={styles.text}>Search restaurants...</Text>
 
                                 </View>
 
-                              </View>
+                              </Ripple>
 
     </View>
     <View style={styles.section3}>
@@ -54,7 +48,7 @@ function Pg3searchbox() {
   );
 
 }
-export default Pg3searchbox ;
+
 
 
 const styles = StyleSheet.create ({
@@ -65,9 +59,10 @@ const styles = StyleSheet.create ({
     justifyContent:'center',
     alignItems: 'center',
    },
+
    layer:
    {
-
+     overflow:'hidden',
      borderRadius:15,
      flexDirection:'row',
      width:'100%',
@@ -86,6 +81,7 @@ const styles = StyleSheet.create ({
    section3:
    {
       flex:1,
+
 
    },
   text:

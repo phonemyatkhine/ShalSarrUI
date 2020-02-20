@@ -11,7 +11,7 @@ function Pg3promotionbar() {
     <View style= {styles.container}>
         <View style={styles.bar}>
               <View style={styles.textarea}>
-              <Text style={styles.smallboldtext}>Promotion</Text>
+              <Text style={styles.smallboldtext}>Promotion*</Text>
 
               </View>
               <View style={styles.promo1}>
@@ -63,8 +63,7 @@ export default Pg3promotionbar ;
 const styles = StyleSheet.create ({
 
    container: {
-    zIndex:1,
-    alignItems: 'center',
+    flex:1,
    },
    smalltextcolor:
    {
@@ -81,25 +80,18 @@ const styles = StyleSheet.create ({
    {
 
       color:'#212121',
-      fontSize:8,
-      fontWeight:'bold',
+      fontSize:14,
    },
    bar:
    {
+     flex:1,
      flexDirection:'row',
      backgroundColor:'#f5f5f5',
      borderRadius:18,
-      width:320,
+      width:"98%",
       height:50,
 
    },
-  text:
-  {
-
-    color:'#000',
-    fontSize:16,
-
-  },
   textarea:
   {
     marginLeft:20,

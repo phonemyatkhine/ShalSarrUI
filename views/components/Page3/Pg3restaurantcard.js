@@ -21,6 +21,11 @@ function Pg3restaurantcard() {
                 <Pg3restaurantcarddetail/>
 
             </View>
+            <View style={styles.cardflex3}>
+
+              <Pg3promotionbar/>
+
+            </View>
 
 
         </View>
@@ -36,6 +41,7 @@ export default Pg3restaurantcard   ;
 const styles = StyleSheet.create ({
 
    container: {
+     flexDirection:'row',
     zIndex:1,
     justifyContent:'center',
     alignItems: 'center',
@@ -54,9 +60,10 @@ const styles = StyleSheet.create ({
    },
    card:
    {
+
       backgroundColor:'#fff',
       flexDirection:'column',
-      width:330,
+      width:'95%',
       height:470,
       borderRadius:20,
       shadowColor: '#212121',
@@ -68,19 +75,24 @@ const styles = StyleSheet.create ({
    },
    cardflex1:
    {
-      flex:10,
+      flex:3,
 
 
 
    },
    cardflex2:
    {
-      marginLeft:27,
-      flex:9,
-
-
-
-
+      marginLeft:19,
+      flex:2,
+      justifyContent:'center',
+   },
+   cardflex3:
+   {
+     
+     marginBottom:3,
+     alignItems:'center',
+     justifyContent:'center',
+     height:50,
    },
 
 
