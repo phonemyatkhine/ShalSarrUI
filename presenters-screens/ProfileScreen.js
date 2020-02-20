@@ -94,7 +94,7 @@ render(){
 
 const styles = StyleSheet.create({
   container: {
-
+    backgroundColor:'#fff',
     flexDirection:'column',
     flex:1,
   },
@@ -163,6 +163,7 @@ const styles = StyleSheet.create({
   {
     height:146,
 
-  }
+  },
+
 
 });

@@ -78,7 +78,7 @@ export default function RestaurantsScreen ({navigation})
       navigation.navigate('screen2');
     }
     const searchboxpressHandler= () => {
-      navigation.navigate('SearchScreen');
+      navigation.navigate('ResultScreen');
     }
   return (
   <View style={{ flex: 1, }}>

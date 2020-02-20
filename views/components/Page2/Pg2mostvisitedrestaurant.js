@@ -71,7 +71,7 @@ export default Pg2mostvisitedrestaurant ;
 const styles = StyleSheet.create ({
 
    container: {
-     marginBottom:100,
+     marginBottom:20,
      fontSize:14,
      marginTop:22,
 
@@ -89,8 +89,7 @@ const styles = StyleSheet.create ({
       shadowRadius: 2,
       elevation: 5,
       borderRadius:20,
-
-      width:297,
+      width:"80%",
       height:397,
    },
   subheading:

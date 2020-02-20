@@ -11,15 +11,22 @@ import Pg2energyleftindicator from '../views/components/Page2/Pg2energyleftindic
 import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedrestaurant'
 
 
+LoginScreen.navigationOptions={
+
+  headerShown: false,
+  cardStyle:{
+    backgroundColor:'#fff',
+  }
+}
 
 
-export default class LoginScreen extends Component {
-  render(){
+export default function LoginScreen ({navigation})
+{
     return (
 
       <View style={styles.container}>
 
-      <Resultpgresultdata/>
+      <Pg1Backgroundimage/>
 
 
       </View>
@@ -30,7 +37,7 @@ export default class LoginScreen extends Component {
 
 
     );
-  }
+
 }
 
 const styles = StyleSheet.create({
