@@ -30,7 +30,7 @@ function Pg1txtShalsar() {
   return (
 
     <View style= {styles.container}>
-      <Text style={styles.text}>   Shal Sarr   </Text>
+      <Text style={styles.text}> Shal Sarr </Text>
     </View>
 
 

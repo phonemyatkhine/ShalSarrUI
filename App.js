@@ -1,47 +1,34 @@
 
-import { StyleSheet, Text, View } from 'react-native';
-import LoginScreen from './presenters-screens/LoginScreen';
-import ProfileScreen from './presenters-screens/ProfileScreen';
-import RestaurantsScreen from './presenters-screens/RestaurantsScreen';
-import MenuScreen from './presenters-screens/MenuScreen';
-import DetailrestaurantScreen from './presenters-screens/DetailrestaurantScreen';
-import SavedScreen from './presenters-screens/SavedScreen';
-import HistoryScreen from './presenters-screens/HistoryScreen';
-import StoreScreen from './presenters-screens/StoreScreen';
-import EditprofileScreen from './presenters-screens/EditprofileScreen';
-import CategoryScreen from './presenters-screens/CategoryScreen';
-import SearchScreen from './presenters-screens/SearchScreen';
-
-import ResultScreen from './presenters-screens/ResultScreen';
-
+import { StyleSheet, Text, View, Alert, StatusBar } from 'react-native';
 import AppNavigator from './navigation/AppNavigator';
+import React, { useState, useEffect, AsyncStorage} from 'react'
+import Homestack from './route/Homestack'
 
-import * as Font from 'expo-font';
-import { AppLoading } from 'expo';
-import React, { useState, useEffect } from 'react';
-import { Animated } from 'react-native';
-import Menustack from './route/Menustack';
-import Restaurantstack from './route/Restaurantstack';
-import Homestack from './route/Homestack';
+App = () => {
 
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-
-    <Homestack/>
-
-    </View>
-  );
+  if(true) {
+    return(
+      <View style={styles.container}>
+        <Homestack/>
+      </View>
+    )
+  } else {
+    return (
+      <View style={styles.container}>
+        <AppNavigator/>
+      </View>
+    );
+  }
 }
+
+export default App
+const statusBarHeight = StatusBar.currentHeight
 
 const styles = StyleSheet.create({
   container: {
-
-
+    paddingTop : statusBarHeight,
     justifyContent:'center',
     flex: 1,
     backgroundColor: '#fff',
-
   },
 });

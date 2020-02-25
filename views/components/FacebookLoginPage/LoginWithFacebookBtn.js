@@ -3,10 +3,10 @@ import { TouchableOpacity, StyleSheet, Text , View} from 'react-native';
 import { Button } from 'react-native'
 import Ripple from 'react-native-material-ripple';
 
-function Pg1btnLoginwithfacebook() {
+function Pg1btnLoginwithfacebook(props) {
   return (
 
-    <Ripple style = {styles.button}>
+    <Ripple style = {styles.button} onPress={props.onPress}>
     <Text style = {styles.btntext}>Login with FACEBOOK</Text>
     </Ripple>
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create ({
      justifyContent:'center',
      zIndex:1,
     overflow: 'hidden',
-    width: 187,
+    width: 220,
     height:50,
     borderRadius:10,
     backgroundColor: '#D63031',

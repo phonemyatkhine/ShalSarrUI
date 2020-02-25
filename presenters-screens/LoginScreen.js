@@ -1,41 +1,33 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-import Pg1btnLoginwithfacebook from '../views/components/Page1/Pg1btnLoginwithfacebook'
-import Pg1txtShalsar from '../views/components/Page1/Pg1txtShalsar'
-import Pg1Backgroundimage from '../views/components/Page1/Pg1Backgroundimage'
-import Pg2profile from '../views/components/Page2/Pg2profile'
-import Pg2txtprofilename from '../views/components/Page2/Pg2txtprofilename'
-import Pg2txtsavedamount from '../views/components/Page2/Pg2txtsavedamount'
-import Pg2energyleftindicator from '../views/components/Page2/Pg2energyleftindicator'
-import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedrestaurant'
-
+import { StyleSheet, Text, View, ImageBackground } from 'react-native'
+import LoginWithFacebookBtn from '../views/components/FacebookLoginPage/LoginWithFacebookBtn'
+import ShalSarrText from '../views/components/FacebookLoginPage/ShalSarrText'
+import UserAuth from '../models/UserAuth'
 
 LoginScreen.navigationOptions={
-
   headerShown: false,
   cardStyle:{
     backgroundColor:'#fff',
   }
 }
 
-
 export default function LoginScreen ({navigation})
-{
+{ 
+
+  login = async () => {
+    await UserAuth.login()
+    navigation.navigate('AppNavigator');
+  }
+  
     return (
-
       <View style={styles.container}>
-
-      <Pg1Backgroundimage/>
-
-
+        <ImageBackground source={require('../assets/backgroundimage/bgimg.jpg')} style = {styles.background}>
+          <ShalSarrText/>
+          <LoginWithFacebookBtn onPress={login}/>
+          <View style={styles.layer}>
+          </View>
+        </ImageBackground>
       </View>
-
-
-
-
-
-
     );
 
 }
@@ -47,4 +39,27 @@ const styles = StyleSheet.create({
     alignItems:'center',
 
   },
+
+  background:
+  {
+
+    alignItems:'center',
+    justifyContent:'center',
+    width:'100%',
+    height:'100%',
+
+  },
+  layer:
+  {
+    position:'absolute',
+    zIndex:0,
+   alignItems:'center',
+    justifyContent:'center',
+    width:'100%',
+    height:'100%',
+    backgroundColor:'#000',
+    opacity: 0.5,
+
+  },
+
 });

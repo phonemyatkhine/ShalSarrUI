@@ -1,22 +1,9 @@
 import React , {Component} from 'react';
 import { StyleSheet, Text, View,ScrollView,SafeAreaView,Alert } from 'react-native';
-
-import Pg1btnLoginwithfacebook from '../views/components/Page1/Pg1btnLoginwithfacebook'
-import Pg1txtShalsar from '../views/components/Page1/Pg1txtShalsar'
-import Pg1Backgroundimage from '../views/components/Page1/Pg1Backgroundimage'
-import Pg2profile from '../views/components/Page2/Pg2profile'
-import Pg2txtprofilename from '../views/components/Page2/Pg2txtprofilename'
-import Pg2txtsavedamount from '../views/components/Page2/Pg2txtsavedamount'
-import Pg2energyleftindicator from '../views/components/Page2/Pg2energyleftindicator'
-import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedrestaurant'
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconfont from 'react-native-vector-icons/MaterialIcons';
-
-import Pg3searchbox from '../views/components/Page3/Pg3searchbox'
 import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
-import Pg3promotionbar from '../views/components/Page3/Pg3promotionbar'
-import Pg3btncategory from '../views/components/Page3/Pg3btncategory'
 import {KeyboardAvoidingView} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -35,13 +22,6 @@ RestaurantsScreen.navigationOptions={
     backgroundColor:'#fff',
   }
 }
-
-
-
-
-
-
-
 
 /////////////
 
