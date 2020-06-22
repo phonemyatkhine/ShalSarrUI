@@ -4,16 +4,15 @@ import { Button } from 'react-native'
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconfont from 'react-native-vector-icons/MaterialIcons';
-import Pg3promotionbar from './Pg3promotionbar'
 
 
-function Pg3restaurantcarddetail() {
+function RestaurantCardDetails(props) {
   return (
 
 
         <View style={styles.layer}>
                 <View style={styles.box1}>
-                    <Text style={styles.subheading}>Golden Duck</Text>
+                    <Text style={styles.subheading}>{props.shop.name}</Text>
                 </View>
                 <View style={styles.box2}>
 
@@ -25,7 +24,7 @@ function Pg3restaurantcarddetail() {
 
                             </View>
                             <View style={styles.b3f1div2}>
-                                <Text style={styles.text}>8 miles</Text>
+                                <Text style={styles.text}>{props.shop.location}</Text>
 
                             </View>
                       </View>
@@ -34,7 +33,7 @@ function Pg3restaurantcarddetail() {
                                 <Text style={styles.text}>Minimum Dining</Text>
                             </View>
                             <View style={styles.b3f2div2}>
-                                <Text style={styles.text}>35000MMK</Text>
+                                <Text style={styles.text}>{props.shop.minimumDining}MMK</Text>
                             </View>
                       </View>
                       <View style={styles.b3flex3}>
@@ -53,7 +52,7 @@ function Pg3restaurantcarddetail() {
   );
 
 }
-export default Pg3restaurantcarddetail;
+export default RestaurantCardDetails;
 
 
 const styles = StyleSheet.create ({

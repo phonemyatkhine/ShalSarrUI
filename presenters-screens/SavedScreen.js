@@ -9,8 +9,8 @@ import Pg2txtsavedamount from '../views/components/Page2/Pg2txtsavedamount'
 import Pg2energyleftindicator from '../views/components/Page2/Pg2energyleftindicator'
 import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedrestaurant'
 
-import Pg3searchbox from '../views/components/Page3/Pg3searchbox'
-import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
+import Pg3searchbox from '../views/components/RestaurantPage/Pg3searchbox'
+import Pg3restaurantcard from '../views/components/RestaurantPage/RestaurantCard'
 import Pg7savedcard from '../views/components/Page7/Pg7savedcard'
 
 import Icon from 'react-native-vector-icons/Ionicons';

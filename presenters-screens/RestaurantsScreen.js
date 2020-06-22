@@ -1,9 +1,9 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View,ScrollView,SafeAreaView,Alert } from 'react-native';
+import { StyleSheet, Text, View,ScrollView,SafeAreaView,Alert, Button } from 'react-native';
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconfont from 'react-native-vector-icons/MaterialIcons';
-import Pg3restaurantcard from '../views/components/Page3/Pg3restaurantcard'
+import RestaurantCard from '../views/components/RestaurantPage/RestaurantCard'
 import {KeyboardAvoidingView} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -26,7 +26,7 @@ RestaurantsScreen.navigationOptions={
 /////////////
 
 //////////////fade animation
-const FadeInView = (props) => {
+const FadeInView = (props,{navigation}) => {
   const [fadeAnim] = useState(new Animated.Value(0))
 
   React.useEffect(() => {
@@ -52,20 +52,95 @@ const FadeInView = (props) => {
 }
 ////////////
 
+
+
+  const RenderShops = (props,{navigation}) => {
+
+    const [hasError, setErrors] = useState(false);
+    const [shops, setShops] = useState([]);
+    
+  const fetchShopData = async () => {
+        try {
+          const res = await fetch("http://192.168.100.19:8080/shop/");
+          setShops(( await res.json()))
+         // console.log( JSON.stringify(res.json()))
+        } catch (error) {
+          console.log(error)
+        }
+          
+    }
+    
+    React.useEffect(() => {
+      fetchShopData()
+    }, [])
+    // "__v": 0,
+    // "_id": "5e56becf9339d75a4dc67a48",
+    // "email": "lamenmonster@gmail.com",
+    // "firstPromo": "15",
+    // "location": "mmplacca",
+    // "minimumDining": 4000,
+    // "name": "Ramen Monster",
+    // "password": "password",
+    // "picPath": "ramenmonster.jpg",
+    // "secondPromo": "20",
+    // "shopDetails": "Best Lamen In town",
+    // "thirdPromo": "35",
+
+    var data =  shops.map(function (shop, index, array) {
+          return (
+                <View style={styles.box3} >
+                  
+                    <RestaurantCard key={shop._id} shop={shop} passPress={props.passPress}/>
+                  
+                </View>
+              
+          )
+    });
+    return data
+      // return(
+      //   <View>
+      //     <View style={styles.box3}>
+      //       <RestaurantCard/>
+      //     </View>
+      //     <View style={styles.box3}>
+      //       <RestaurantCard/>
+      //     </View>
+      //     <View style={styles.box3}>
+      //       <RestaurantCard/>
+      //     </View>
+      //   </View>
+      // )
+    //   // var data = JSON.stringify(shops)
+
+
+    // shops.map(shop => {
+    //   return (
+    //     <View style={styles.box2}>
+    //       <RestaurantCard/>
+    //     </View>
+    //   )
+    // });
+  }
+
 export default function RestaurantsScreen ({navigation})
 {
+
     const pressHandler= () => {
-      navigation.navigate('screen2');
+        navigation.navigate('screen2');
     }
     const searchboxpressHandler= () => {
       navigation.navigate('ResultScreen');
     }
+    const detailPressHandler = () => {
+      navigation.navigate('DetailRestaurantScreen')
+    }
+
   return (
   <View style={{ flex: 1, }}>
     <FadeInView style={styles.container}>
       <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
 
-
+      
       <SafeAreaView style={styles.container}>
       <View style={styles.box1}>
 
@@ -96,15 +171,9 @@ export default function RestaurantsScreen ({navigation})
 
                       </Ripple>
               </View>
-
-              <View style={styles.box2}>
-                <Pg3restaurantcard/>
-              </View>
-              <View style={styles.box3}>
-                <Pg3restaurantcard/>
-              </View>
-
+              <RenderShops passPress={detailPressHandler}/>
             </ScrollView>
+            
           </SafeAreaView>
 
       </KeyboardAvoidingView>
@@ -129,7 +198,7 @@ const styles = StyleSheet.create({
   {
     alignItems:'center',
     flex:1,
-
+    marginBottom: 12.5,
   },
   layer:
   {
@@ -206,15 +275,15 @@ const styles = StyleSheet.create({
 
 
 
-
   },
 
   box3:
   {
-      marginTop:25,
+      marginTop:12.5,
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'center',
+    marginBottom:12.5,
 
 
 

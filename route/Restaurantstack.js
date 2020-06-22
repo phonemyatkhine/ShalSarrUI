@@ -4,7 +4,7 @@ import {createAppContainer} from 'react-navigation';
 import RestaurantsScreen from '../presenters-screens/RestaurantsScreen';
 import CategoryScreen from '../presenters-screens/CategoryScreen';
 import ResultScreen from '../presenters-screens/ResultScreen';
-
+import DetailRestaurantScreen from '../presenters-screens/DetailRestaurantScreen'
 
 
 
@@ -22,7 +22,14 @@ const screens = {
   ResultScreen:
   {
     screen:ResultScreen
-
+  },
+  DetailRestaurantScreen : 
+  {
+    screen : DetailRestaurantScreen,
+    navigationOptions:
+    {
+      headerShown: false,
+    },
   },
 
 

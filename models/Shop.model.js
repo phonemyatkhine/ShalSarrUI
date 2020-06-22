@@ -1,9 +1,7 @@
 import React , {Component} from 'react';
 import {AsyncStorage} from 'react-native';
-import * as Facebook from 'expo-facebook';
 
-
-class UserAuth {
+class ShopModel {
     
     setUserSession = async (data) => {
         try {
@@ -113,7 +111,6 @@ class UserAuth {
         this.setUserSession(responseJson)
         const userId = await this.getUserId()
         //Alert.alert('Logged in!', `Hi ${(await response.json()).name}!`);
-        console.log(token);
       } else {
         alert("Login Error!! Please try again later.")
       }

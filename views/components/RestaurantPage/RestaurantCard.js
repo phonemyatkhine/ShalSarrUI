@@ -4,26 +4,30 @@ import { Button } from 'react-native'
 import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconfont from 'react-native-vector-icons/MaterialIcons';
-import Pg3restaurantcarddetail from './Pg3restaurantcarddetail'
-import Pg3promotionbar from './Pg3promotionbar'
+import RestaurantCardDetails from './RestaurantCardDetails'
+import PromotionBar from './PromotionBar'
 
-function Pg3restaurantcard() {
+function RestaurantCard(props) {
   return (
-
-    <View style= {styles.container}>
+    <TouchableOpacity onPress={props.passPress}> 
+    <View style= {styles.container} >
         <View style={styles.card}>
             <View style={styles.cardflex1}>
-                  <ImageBackground source={require('../../../assets/backgroundimage/shwebel.jpg')} style = {styles.background}>
+                  <ImageBackground source={{uri: 'http://192.168.100.19:8080/image/'+props.shop.picPath}} style = {styles.background}>
                   </ImageBackground>
             </View>
             <View style={styles.cardflex2}>
 
-                <Pg3restaurantcarddetail/>
+                <RestaurantCardDetails shop={props.shop}/>
 
             </View>
             <View style={styles.cardflex3}>
 
-              <Pg3promotionbar/>
+              <PromotionBar 
+                firstPromo={props.shop.firstPromo} 
+                secondPromo={props.shop.secondPromo} 
+                thirdPromo={props.shop.thirdPromo}
+              />
 
             </View>
 
@@ -31,11 +35,11 @@ function Pg3restaurantcard() {
         </View>
 
     </View>
-
+    </TouchableOpacity>
   );
 
 }
-export default Pg3restaurantcard   ;
+export default RestaurantCard   ;
 
 
 const styles = StyleSheet.create ({

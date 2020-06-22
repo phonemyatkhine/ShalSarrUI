@@ -5,7 +5,7 @@ import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-function Pg3promotionbar() {
+function PromotionBar(props) {
   return (
 
     <View style= {styles.container}>
@@ -22,7 +22,7 @@ function Pg3promotionbar() {
                     </View>
                     <View style={styles.p1flex2}>
 
-                        <Text style={styles.smalltext}>10%</Text>
+                        <Text style={styles.smalltext}>{props.firstPromo}%</Text>
 
                     </View>
               </View>
@@ -34,7 +34,7 @@ function Pg3promotionbar() {
                       </View>
                       <View style={styles.p2flex2}>
 
-                          <Text style={styles.smalltext}>20%</Text>
+                          <Text style={styles.smalltext}>{props.secondPromo}%</Text>
 
                       </View>
               </View>
@@ -46,7 +46,7 @@ function Pg3promotionbar() {
                       </View>
                       <View style={styles.p3flex2}>
 
-                          <Text style={styles.smalltext}>30%</Text>
+                          <Text style={styles.smalltext}>{props.thirdPromo}%</Text>
 
                       </View>
               </View>
@@ -57,7 +57,7 @@ function Pg3promotionbar() {
   );
 
 }
-export default Pg3promotionbar ;
+export default PromotionBar ;
 
 
 const styles = StyleSheet.create ({
